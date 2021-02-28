@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Nav from '../Nav/Nav';
 
 import './Courses.css';
 
@@ -14,6 +15,7 @@ class Courses extends Component {
     render () {
         return (
             <div>
+                <Nav/>
                 <h1>Amazing Udemy Courses</h1>
                 <section className="Courses">
                     {
