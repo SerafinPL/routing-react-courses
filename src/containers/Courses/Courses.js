@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
+import {Link, Route} from 'react-router-dom';
+import Course from '../Course/Course';
 
 import './Courses.css';
 
@@ -12,7 +14,10 @@ class Courses extends Component {
         ]
     }
 
+
+
     render () {
+        
         return (
             <div>
                 <Nav/>
@@ -20,10 +25,18 @@ class Courses extends Component {
                 <section className="Courses">
                     {
                         this.state.courses.map( course => {
-                            return <article className="Course" key={course.id}>{course.title}</article>;
+                            return (
+                                <Link key={course.id} to={{
+                                                                    pathname: '/courses/' + course.id + '/' + course.title
+                                                                   
+                                                                }}>
+                                    <article className="Course"  >{course.title}</article>
+                                </Link>
+                            );
                         } )
                     }
                 </section>
+                <Route path='/courses/:courseId/:courseTitle'  component={Course} />
             </div>
         );
     }
