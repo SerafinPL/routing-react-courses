@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import {Link, Route} from 'react-router-dom';
-import Course from '../Course/Course';
+import Course3 from '../Course3/Course';
 
 import './Courses.css';
 
@@ -16,27 +16,30 @@ class Courses extends Component {
 
 
 
+
     render () {
         
         return (
             <div>
                 <Nav/>
-                <h1>Amazing Udemy Courses1</h1>
+                <h1>Amazing Udemy Courses3</h1>
                 <section className="Courses">
                     {
                         this.state.courses.map( course => {
                             return (
                                 <Link key={course.id} to={{
-                                pathname: '/courses/' + course.id + '/' + course.title
-                                                                   
+                                pathname: '/coursequery/' + course.id,
+                                search: '?courseId=' + course.id + '&courseTitle=' + course.title                                
                                                                 }}>
-                                    <article className="Course"  >{course.title}</article>
+                                    <article className="Course" >
+                                        {course.title}
+                                    </article>
                                 </Link>
                             );
                         } )
                     }
                 </section>
-                <Route path='/courses/:courseId/:courseTitle'  component={Course} />
+                <Route path='/coursequery/:courseId'  component={Course3} />
             </div>
         );
     }
