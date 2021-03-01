@@ -26,7 +26,7 @@ class Courses extends Component {
         return (
             <div>
                 <Nav/>
-                <h1>Amazing Udemy Courses</h1>
+                <h1>Amazing Udemy Courses2</h1>
                 <section className="Courses">
                     {
                         this.state.courses.map( course => {
@@ -43,7 +43,7 @@ class Courses extends Component {
                         } )
                     }
                 </section>
-                <Route path='/courses/:courseId/:courseTitle'  component={Course} />
+                
             </div>
         );
     }

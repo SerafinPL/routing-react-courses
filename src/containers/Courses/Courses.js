@@ -21,7 +21,7 @@ class Courses extends Component {
         return (
             <div>
                 <Nav/>
-                <h1>Amazing Udemy Courses</h1>
+                <h1>Amazing Udemy Courses1</h1>
                 <section className="Courses">
                     {
                         this.state.courses.map( course => {
